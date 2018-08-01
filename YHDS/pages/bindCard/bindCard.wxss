@@ -1,0 +1,14 @@
+/* pages/bindCard/bindCard.wxss */
+
+.bottom-btn{
+  position: absolute;
+  bottom: 100rpx;
+  width: 500rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.inputTxt{
+line-height: 28rpx;
+  /* background-color: red; */
+
+}

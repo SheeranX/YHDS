@@ -1,0 +1,11 @@
+/* pages/activate/activate.wxss */
+.width-50-height-50{
+  width: 50rpx;
+  height: 50rpx;
+}
+.align-center{
+  align-items: center
+}
+.header{
+  justify-content: center;
+}

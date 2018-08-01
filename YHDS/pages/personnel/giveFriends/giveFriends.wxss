@@ -1,0 +1,36 @@
+/* pages/personnel/giveFriends/giveFriends.wxss */
+.send-gift{
+  align-items: center;
+}
+.send-gift-image{
+  width: 600rpx;
+  height: 350rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, .7);
+}
+.card-info{
+  height: 300rpx;
+  width: 500rpx;
+  justify-content:space-between;
+  padding: 20rpx;
+  position: absolute;
+  margin-top: 120rpx;
+  color: #fff;
+}
+
+.link-btn{
+  position: absolute;
+  bottom: 20%;
+  left:50%;
+  transform: translateX(-50%);
+  width: 400rpx;
+}
+.margin-top-20{
+  margin-top: 20rpx;
+}
+.margin-top-40{
+  margin-top: 40rpx;
+}
+.margin-left-350{
+  margin-left: -350rpx;
+}

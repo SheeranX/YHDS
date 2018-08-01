@@ -1,0 +1,36 @@
+/* Components/purchasedInfo/purchasedInfo.wxss */
+@import '../../app.wxss';
+.purchased-info{
+  height: 400rpx;
+  justify-content: space-around;
+  background:#fff;
+  padding: 0 40rpx;
+  margin: 20rpx 0;
+}
+.card-title{
+  justify-content:space-between;
+  padding: 20rpx 0;
+}
+.justify-content{
+  justify-content: space-between;
+}
+
+.card-content{
+  justify-content: space-between;
+  height: 200rpx;
+  padding-bottom: 20rpx;
+}
+.btn-operate{
+  border: 2rpx solid #dabc98;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #dabc98;
+  width: 160rpx;
+  margin: 0 10rpx;
+}
+.card-footer{
+  justify-content: flex-end;
+}
+.danger{
+  color: red;
+}

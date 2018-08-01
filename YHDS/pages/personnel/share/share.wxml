@@ -1,0 +1,12 @@
+<!--pages/personnel/share/share.wxml-->
+<view class='well-paper'>
+  <image src='{{imgUrl}}' class='well-img'></image>
+  <view class='txt-info flex-column font32 bolder padding-topbtm'>
+    <text>好友 {{name}} 邀请您成为</text>
+    <text class='txt-align-right padding-right margin-top-40'>成为月湖雕塑公园的会员</text>
+  </view> 
+  <view class='link-btn'>
+    <navigator url='../../index/index' hover-class='none' open-type='switchTab'><button class='btn btn-green white font28' hidden='{{flag}}'>了解会员</button></navigator>
+    <button class='btn btn-green white font28' open-type='share' hidden='{{!flag}}'>分享给好友</button>
+  </view>
+</view>

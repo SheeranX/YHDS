@@ -1,0 +1,14 @@
+<!--Components/card.wxml-->
+<view class='card'>
+  <view class='card-content flex-column  padding-between'>
+    <view>
+       <view class='white txt-align-left'><text class='card-title'>{{cardObj.ticketTypeName}}</text><text class='card-type'> {{cardObj.cardKind}} </text></view>
+       <view class='card-no white txt-align-left'><text>卡号：{{cardObj.cardNo}}</text></view>
+    </view>
+    <view class='balance golden flex-column txt-align-left'>
+        <text>余额（元）</text>
+        <text class='font36 bolder'>{{cardObj.cardAccountValue}}</text>
+     </view>
+  </view>
+  <image src='../../assets/images/card_l.png' class="card-img"></image>
+</view>

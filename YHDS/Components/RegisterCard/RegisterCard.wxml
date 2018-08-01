@@ -1,0 +1,14 @@
+<!--Components/RegisterCard/RegisterCard.wxml-->
+<view class='register'>
+  <view class='register-content flex-column div-center'>
+    <view class='register-txt flex-column white'>
+      <view>
+        <text class='title bolder'>{{cardInfo.title}}</text>
+      </view>
+      <view class='txt-align-right'>
+        <text>{{cardInfo.cardName}}</text>
+      </view>
+    </view>
+    <image src='../../assets/images/card_l.png' class="register-img"></image>
+  </view>
+</view>

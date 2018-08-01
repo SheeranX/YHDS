@@ -1,0 +1,180 @@
+<wxs module="filter" src="../../../assets/scripts/filter.wxs"></wxs>
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==idx?'active':''}}" data-current="{{idx}}" bindtap="clickTab" wx:for="{{swiper}}" wx:key="unique" wx:for-item="item" wx:for-index="idx">{{item}}</view>
+</view>
+<!-- 检票明细 -->
+<view class='container padding-between' wx-if="{{currentTab==0}}">
+  <view class='flex-row filter btm-wired'>
+    <text></text>
+    <view bindtap='clickDate'>
+      <image src='../../../assets/images/screening.png' class='icon'></image>
+      <text class='padding-between'>筛选</text>
+    </view>
+  </view>
+  <view class='date-list flex-column'>
+    <view class='date-item flex-row btm-wired' wx:for="{{checkDetails}}" wx:for-item="item" wx:key="unique">
+      <text>{{item.checkInfoTime}}</text>
+      <text>{{item.cardOwnerName}}</text>
+    </view>
+  </view>
+  <!--日期筛选弹窗 -->
+  <view class='modal-date' bindtap='clickDate' wx:if="{{dateModal}}"></view>
+  <view class='modal-content flex-column {{dateModal?"date-active":""}}'>
+    <text>日期筛选：</text>
+    <view class='flex-row div-center space-center padding-top'>
+      <picker mode="date" value="{{date}}" start="2000-01-01" end="2100-12-12" bindchange="bindDateChange">
+        <view class='padding-right'>
+          <input type='text' class='date-input' value='{{date}}' disabled='true'></input>
+          <image src='../../../assets/images/date.png' class='icon icon-left'></image>
+        </view>
+      </picker>
+      <view class='middle'>
+        <text>至</text>
+      </view>
+      <picker mode="date" value="{{endDate}}" start="2000-01-01" end="2100-12-12" bindchange="bindEndDateChange">
+        <view class='padding-left'>
+          <input type='text' class='date-input' value='{{endDate}}' disabled='true'></input>
+          <image src='../../../assets/images/date.png' class='icon icon-right'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='txt-align-right'>
+      <button class='btn btn-confirm  margin-top font24 white' bindtap='checkConfirm'>确认</button>
+    </view>
+  </view>
+</view>
+<!-- 账户明细 -->
+<view class='container padding-between' wx-if="{{currentTab==1}}">
+  <view class='flex-row filter btm-wired'>
+    <text></text>
+    <view bindtap='clickAccount'>
+      <image src='../../../assets/images/screening.png' class='icon'></image>
+      <text class='padding-between'>筛选</text>
+    </view>
+  </view>
+  <view class='account-list flex-column'>
+   <view class='txt-align-center'>
+      <text>该功能有待开发，敬请期待</text>
+    </view>
+    <view class='account-item flex-row btm-wired' hidden='true'>
+      <view class='flex-column spacing-between'>
+        <text>会员卡充值</text>
+        <text>余额:3500</text>
+      </view>
+      <view class='flex-column spacing-between'>
+        <text>2018-06-02 13:20:55</text>
+        <text>+1500 （含赠送500）</text>
+      </view>
+    </view>
+  </view>
+  <!--账户筛选弹窗 -->
+  <view class='modal-account' bindtap='clickAccount' wx:if="{{accountModal}}"></view>
+  <view class='modal-account-content flex-column padding-between {{accountModal?"account-active":""}}'>
+    <text>日期筛选：</text>
+    <view class='flex-row div-center space-center padding-top'>
+      <view class='padding-right'>
+        <input type='text' class='date-input' disabled='true'></input>
+        <image src='../../../assets/images/date.png' class='icon icon-left'></image>
+      </view>
+      <view class='middle'>
+        <text>至</text>
+      </view>
+      <view class='padding-left'>
+        <input type='text' class='date-input' disabled='true'></input>
+        <image src='../../../assets/images/date.png' class='icon icon-right'></image>
+      </view>
+    </view>
+    <text class='padding-top'>操作类型：</text>
+    <view class='flex-row radio-group padding-top'>
+      <view class='radio-operate' wx:for="{{condition}}" wx:for-item="item" wx:key="unique" bindtap='clickRadio' wx:for-index="idx" data-radio='{{idx}}'>
+        <image src='../../../assets/images/{{currentSelect==idx?"chooseicon.png":"unchooseicon.png"}}'></image>
+        <text>{{item}}</text>
+      </view>
+    </view>
+    <view class='txt-align-right'>
+      <button class='btn btn-confirm  margin-top font24 white'>确认</button>
+    </view>
+  </view>
+</view>
+<!-- 积分明细 -->
+<view class='container padding-between' wx-if="{{currentTab==2}}">
+  <view class='flex-row filter btm-wired'>
+    <text></text>
+    <view bindtap='clickPoint'>
+      <image src='../../../assets/images/screening.png' class='icon'></image>
+      <text class='padding-between'>筛选</text>
+    </view>
+  </view>
+  <view class='date-list flex-column'>
+    <view class='date-item flex-row btm-wired' hidden='true'>
+      <text>2018-06-07 13:35:56</text>
+      <text>+10</text>
+    </view>
+    <view class='txt-align-center'>
+      <text>该功能有待开发，敬请期待</text>
+    </view>
+  </view>
+  <!--日期筛选弹窗 -->
+  <view class='modal-date' bindtap='clickPoint' wx:if="{{pointModal}}"></view>
+  <view class='modal-content flex-column {{pointModal?"date-active":""}}'>
+    <text>日期筛选：</text>
+    <view class='flex-row div-center space-center padding-top'>
+      <view class='padding-right'>
+        <input type='text' class='date-input' disabled='true'></input>
+        <image src='../../../assets/images/date.png' class='icon icon-left'></image>
+      </view>
+      <view class='middle'>
+        <text>至</text>
+      </view>
+      <view class='padding-left'>
+        <input type='text' class='date-input' disabled='true'></input>
+        <image src='../../../assets/images/date.png' class='icon icon-right'></image>
+      </view>
+    </view>
+    <view class='txt-align-right'>
+      <button class='btn btn-confirm  margin-top font24 white'>确认</button>
+    </view>
+  </view>
+</view>
+<!-- 推荐明细 -->
+<view class='container padding-between' wx-if="{{currentTab==3}}">
+  <view class='flex-row filter btm-wired'>
+    <text></text>
+    <view bindtap='clickRecommand'>
+      <image src='../../../assets/images/screening.png' class='icon'></image>
+      <text class='padding-between'>筛选</text>
+    </view>
+  </view>
+  <view class='date-list flex-column' wx:for="{{recommandDetails}}" wx:for-item="item" wx:key="unique">
+    <view class='date-item flex-row btm-wired'>
+      <text>{{item.createdDate}}</text>
+      <text>{{item.cardOwnerName}}</text>
+      <text>{{filter.cardNo(item.cardOwnerIDNO)}}</text>
+    </view>
+  </view>
+  <!--日期筛选弹窗 -->
+  <view class='modal-date' bindtap='clickRecommand' wx:if="{{recommandModal}}"></view>
+  <view class='modal-content flex-column {{recommandModal?"date-active":""}}'>
+    <text>日期筛选：</text>
+    <view class='flex-row div-center space-center padding-top'>
+     <picker mode="date" value="{{recommandStartDate}}" start="2000-01-01" end="2100-12-12" bindchange="bindrecommandDateChange">
+      <view class='padding-right'>
+        <input type='text' class='date-input' value='{{recommandStartDate}}' disabled='true'></input>
+        <image src='../../../assets/images/date.png' class='icon icon-left'></image>
+      </view>
+    </picker>
+      <view class='middle'>
+        <text>至</text>
+      </view>
+      <picker mode="date" value="{{recommandEndDate}}" start="2000-01-01" end="2100-12-12" bindchange="bindrecommandEndDateChange">
+      <view class='padding-left'>
+        <input type='text' class='date-input' value='{{recommandEndDate}}' disabled='true'></input>
+        <image src='../../../assets/images/date.png' class='icon icon-right'></image>
+      </view>
+      </picker>
+    </view>
+    <view class='txt-align-right'>
+      <button class='btn btn-confirm  margin-top font24 white' bindtap='recommandConfirm'>确认</button>
+    </view>
+  </view>
+</view>

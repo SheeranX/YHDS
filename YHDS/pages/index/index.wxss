@@ -1,0 +1,29 @@
+/**index.wxss**/
+.card-btn{
+  border: 2rpx solid #dabc98;
+}
+
+.card-content{
+  position: absolute;
+  width: 640rpx;
+  height: 360rpx;
+  justify-content: space-around;
+  padding-top: 100rpx;
+  /* margin-top: 30rpx; */
+}
+
+.btn-operate{
+  justify-content: space-between;
+}
+.btn-operate view{
+  width: 50%;
+  padding: 0 30rpx;
+}
+.remind{
+  padding:40rpx 40rpx 0  80rpx;
+}
+ .canvas-box{
+   position: fixed;
+   top: 999999rpx;
+   left: 0
+   }

@@ -1,0 +1,5 @@
+/* Components/customerCard/customerCard.wxss */
+@import "../../app.wxss";
+.hide{
+  display: none;
+}

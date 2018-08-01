@@ -1,0 +1,12 @@
+/* pages/personnel/purchasedCard/purchasedCard.wxss */
+page{
+  background:#ededed;
+}
+.white-bg{
+  background: #fff;
+}
+.header-title{
+  justify-content: flex-start;
+  height: 80rpx;
+  line-height: 80rpx;
+}

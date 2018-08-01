@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "RegisterCard": "/Components/RegisterCard/RegisterCard",
+    "customercard":"/Components/customerCard/customerCard"
+  }
+}

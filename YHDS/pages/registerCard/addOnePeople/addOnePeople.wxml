@@ -1,0 +1,50 @@
+<view class='container'>
+  <!-- 添加用户详细信息 -->
+  <form class='flex-column padding-50 font28' bindsubmit='bindSubmit'>
+    <view class='flex-row height100 form-block btm-wired'>
+      <view class='flex-row form-block'>
+        <text class='label-title'> 姓   名：</text>
+        <input type='text' placeholder='请输入会员名' placeholder-class='font24' name='userName'></input>
+      </view>
+      <text class='right-arrow invisible'>></text>
+    </view>
+    <view class='flex-row height100 form-block btm-wired'>
+      <view class='flex-row form-block'>
+        <text class='label-title'>证件类型：</text>
+        <!--证件类型选择器-->
+        <picker range='{{cardTypes}}' bindchange='bindPickerChange'>
+          <input type='text' placeholder='请选择证件类型' placeholder-class='font24' value='{{cardType}}' disabled='true' class='font24'></input>
+        </picker>
+        <text class='right-arrow'>></text>
+      </view>
+    </view>
+    <view class='flex-row height100 form-block btm-wired'>
+      <view class='flex-row form-block'>
+        <text class='label-title'>证件号：</text>
+        <input type='idcard' placeholder='请输入证件号' placeholder-class='font24' name="cardNo"></input>
+      </view>
+      <text class='right-arrow invisible'>></text>
+    </view>
+    <view class='flex-row height100 form-block btm-wired'>
+      <view class='flex-row form-block'>
+        <text class='label-title'>手机号：</text>
+        <input type='number' placeholder='请输入手机号' placeholder-class='font24' name="phoneNum"></input>
+      </view>
+      <text class='right-arrow invisible'>></text>
+    </view>
+    <view class='flex-row height100 form-block btm-wired'>
+      <view class='flex-row form-block'>
+        <text class='label-title'>添加照片：</text>
+        <input type='text' placeholder='请选择照片' placeholder-class='font24' disabled='true' bindtap='addPhoto'></input>
+        <image class='wthumbnail' src="{{path}}"></image>
+        <text class='right-arrow'>></text>
+      </view>
+    </view>
+    <view class='flex-row height100 form-block '>
+      <text class='text-red'>注：该照片将用于人脸识别，请上传竖向清晰人脸照片;\n信息提交前请再三确认，因提交录入后将无法修改！</text>
+    </view>
+    <view class='padding-between bottom-btn margin-top-80'>
+      <button class='btn btn-green white font28' form-type='submit'>添加</button>
+    </view>
+  </form>
+</view>

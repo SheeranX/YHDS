@@ -1,0 +1,117 @@
+/* pages/personnel/personnel.wxss */
+.card-btn{
+  border: 2rpx solid #dabc98;
+}
+
+.card-content{
+  position: absolute;
+  width: 640rpx;
+  height: 360rpx;
+  justify-content: space-between;
+  padding-top: 70rpx;
+}
+.card-title{
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 30rpx;
+}
+.btn-details{
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 50rpx;
+  border: 2rpx solid #dabc98;
+}
+.card-no{
+  align-items: center;
+}
+.card-footer{
+  justify-content: space-around;
+}
+.nav-img{
+  width: 60rpx;
+  height: 60rpx;
+}
+.nav-bar{
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-icon{
+  justify-content: space-around;
+  align-items: center;
+}
+.h{
+  height: 150rpx;
+}
+
+.operate-item{
+  justify-content: space-between;
+  height: 100rpx;
+  align-items: center;
+}
+.btn-scancode{
+  border-radius: 40rpx;
+  border: 2rpx solid #25667d;
+  color: #25667d;
+}
+.btn-scancode image{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: sub;
+}
+.unbind{
+  text-decoration: underline;
+}
+.modal{
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+.modal-content{
+  width: 500rpx;
+  height: 600rpx;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,150%);
+  z-index: 1000;
+  justify-content: center;
+  border-radius: 8rpx;
+  transition:all linear .5s;
+}
+.modal-content .icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: -60rpx;
+}
+.modal-qrcode{
+  justify-content: center;
+  align-items: center;
+}
+.qrcode-img{
+  width: 120px;
+  height: 120px;
+  padding-bottom: 10rpx;
+}
+
+
+.show-modal{
+  transform: translate(-50%,-50%);
+  transition:all ease-in-out .5s;
+}
+.recommand-btn{
+  display: inline-block;
+  background:#fff;
+  padding: 0;
+  margin: 0;
+  font-size: 28rpx;
+  width: 100%;
+  text-align: left;
+}
+
+

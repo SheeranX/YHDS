@@ -1,0 +1,23 @@
+<!--Components/customerCard/customerCard.wxml-->
+  <!-- 添加的用户显示列表 -->
+  <view class='customer-list flex-column div-center padding-between'>
+    <view class='customer-item flex-row full-width'>
+      <view class='customer-profile' catchtap='_addPhotoEvent'>
+        <image src='{{obj.path}}'  mode='aspectFill' class='profile-img'></image>
+      </view>
+      <view class='customer-details flex-column'>
+        <view class='flex-row customer-name'>
+          <text>{{obj.name}}({{obj.status}})</text>
+          <image src='{{obj.delPath}}' class='icon icon-del 'catchtap='_deleteEvent' data-idx='{{obj.idcard}}' hidden='{{isHide}}'></image>
+        </view>
+        <view>
+          <text>身份证：</text>
+          <text>{{obj.idcard}}</text>
+        </view> 
+        <view>
+          <text>手机号：</text>
+          <text>{{obj.mobile}}</text>
+        </view>
+      </view>
+    </view>
+  </view>

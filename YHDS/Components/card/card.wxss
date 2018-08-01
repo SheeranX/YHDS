@@ -1,0 +1,19 @@
+/* Components/card/card.wxss */
+
+@import '../../app.wxss';
+/* .card{
+  margin-top: 40rpx;
+} */
+.card-img{
+  height: 360rpx;
+  box-shadow: 4rpx 4rpx 4rpx rgba(0, 0, 0, 0.25);
+  border-radius: 30rpx;
+  width: 640rpx;
+  transform:translateY(-2rpx);
+}
+.card-content{
+  justify-content: space-around;
+  height: 360rpx;
+  position: absolute;
+  z-index:9999;
+}

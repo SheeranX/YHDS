@@ -1,0 +1,34 @@
+<!--pages/bindCard/bindCard.wxml-->
+<view class='container'>
+  <view class='header flex-column div-center'>
+    <view class='header-card txt-align-center flex-column div-center'>
+      <card id="card" cardObj="{{cardInfo}}"></card>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='flex-column padding-between form-row'>
+      <view class='flex-row btm-wired height80 padding-between'>
+        <view class='flex-row form-block'>
+          <text class='label-title'>手机号：</text>
+          <view class='font28'>
+            <input type='number' placeholder='请输入会员手机号' placeholder-class="font24" maxlength="11" name="phoneNo" value="{{cardInfo.phoneNo}}" disabled="disabled"></input>
+          </view>
+        </view>
+        <view class='qrcode'>
+          <button class='btn btn-qrcode' bindtap='sendSms' disabled="{{disabled}}">{{getMsg}}</button>
+        </view>
+      </view>
+      <view class='flex-row btm-wired height80 padding-between'>
+        <view class='flex-row form-block'>
+          <text class='label-title'>验证码：</text>
+          <view class='font28 inputTxt'>
+            <input type='number' placeholder="请输入手机验证码" placeholder-class='flex-row font24' name="verificationCode"></input>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='padding-between bottom-btn'>
+      <button class='btn btn-green white font28' form-type='submit'>立即绑定</button>
+    </view>
+  </form>
+</view>

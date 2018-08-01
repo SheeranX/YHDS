@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "RegisterCard": "/Components/RegisterCard/RegisterCard"
+  }
+}

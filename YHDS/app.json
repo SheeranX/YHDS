@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personnel/personnel",
+    "pages/bindCard/bindCard",
+    "pages/activate/activate",
+    "pages/registerCard/registerCard",
+    "pages/bindCard/enterCardNo/enterCardNo",
+    "pages/registerCard/addCustomer/addCustomer",
+    "pages/registerCard/customerDetail/customerDetail",
+    "pages/activate/acivatebypwd/acivatebypwd",
+    "pages/rechargeVIP/rechargeVIP",
+    "pages/renewalCard/renewalCard",
+    "pages/cardInfo/vipInfo/vipInfo",
+    "pages/cardInfo/reportInfo/reportInfo",
+    "pages/registerCard/addOnePeople/addOnePeople",
+    "pages/personnel/purchasedCard/purchasedCard",
+    "pages/personnel/cardDetail/cardDetail",
+    "pages/personnel/vipDetails/vipDetails",
+    "pages/personnel/share/share",
+    "pages/personnel/giveFriends/giveFriends",
+    "pages/bindVip/bindVip",
+    "pages/addVipPhoto/addVipPhoto"
+  ],
+  "window": {
+    "backgroundTextStyle": "bolder",
+    "navigationBarBackgroundColor": "#25667b",
+    "navigationBarTitleText": "月湖雕塑公园",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "selectedColor": "#25667b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "电子会员卡",
+        "iconPath": "assets/images/icon_vip.png",
+        "selectedIconPath": "assets/images/icon_vip_hover.png"
+      },
+      {
+        "pagePath": "pages/personnel/personnel",
+        "text": "个人中心",
+        "iconPath": "assets/images/icon_user.png",
+        "selectedIconPath": "assets/images/icon_user_hover.png"
+      }
+    ]
+  }
+}

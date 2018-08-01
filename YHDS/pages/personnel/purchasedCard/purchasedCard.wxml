@@ -1,0 +1,18 @@
+<!--pages/personnel/purchasedCard/purchasedCard.wxml-->
+<wxs module="filter" src="../../../assets/scripts/filter.wxs"></wxs>
+<view class='container purchase-card'>
+  <view class='flex-row header-title font28 golden padding-between'  wx:if="{{isShow}}">
+   <view>共{{total}}张</view><view class='padding-between'>合计 ¥{{filter.formatMoney(totalPay)||0}}</view>
+  </view>
+  <purchasedInfo bind:withdraw="_withdraw" class="white-bg" orderInfo="{{item}}"          
+      bind:detail="_detail"
+      bind:present="_present" 
+      wx:for="{{order}}" 
+      wx-for-item="{{item}}" 
+      wx:key="unique"
+      ></purchasedInfo>
+
+    <view wx:if="{{!isShow}}" class='txt-align-center'>
+       您的账户没有购卡信息
+    </view>
+</view> 
