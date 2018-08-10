@@ -1,0 +1,113 @@
+.margin-left-60 {
+  margin-left: 60rpx;
+}
+
+.margin-top-30 {
+  margin-top: 30rpx;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.header {
+  height: 480rpx;
+  width: 100%;
+  background: linear-gradient(#25667d, #2a84a1);
+}
+
+.width-100 {
+  width: 150rpx;
+}
+
+.margin-top {
+  margin-top: 25rpx;
+  margin-left: 30rpx;
+}
+
+.lable-padding-20 {
+  padding: 20rpx;
+}
+
+.backgroud-white {
+  background: white;
+}
+
+.height-50 {
+  margin-left: 10rpx;
+  height: 50rpx;
+}
+
+.width-50 {
+  width: 50rpx;
+}
+
+.image-width-height {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.margin-left-100 {
+  margin-left: 100rpx;
+}
+
+.centerItems {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.height110 {
+  height: 110rpx;
+}
+
+.margin-left-280 {
+  margin-left: 280rpx;
+}
+
+.margin-right-50 {
+  margin-right: 50rpx;
+}
+
+.margin-left-50 {
+  margin-left: 50rpx;
+}
+
+.margin-20 {
+  margin: 20rpx;
+}
+
+.margin-top-20 {
+  margin-top: 20rpx;
+}
+
+.orange {
+  color: orangered;
+}
+
+.text-align-center {
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.border-1 {
+  border: 1rpx solid #ccc;
+}
+
+.renewal-cal{
+  align-items: center;
+}
+
+.btn-cal{
+  line-height: 54rpx;
+  text-align: center;
+  border: 1rpx solid #ccc;
+  border-radius: 0;
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+.radioGroup-padding-right{
+  /* padding-left: 20rpx; */
+  padding-right: 40rpx;
+}

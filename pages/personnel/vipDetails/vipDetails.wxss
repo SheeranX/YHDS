@@ -1,0 +1,18 @@
+
+.check-detail view{
+  padding: 10rpx;
+}
+.long-label{
+  width: 200rpx;
+  text-align: right;
+  display: inline-block;
+}
+.flex-start{
+  align-items: flex-start;
+}
+.padding-top{
+  padding-top: 10rpx;
+}
+.width-180{
+  width: 180rpx;
+}

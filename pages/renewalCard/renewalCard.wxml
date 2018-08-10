@@ -1,0 +1,90 @@
+<wxs module="filter" src="../../assets/scripts/filter.wxs">
+</wxs>
+<view class='container'>
+  <!--上半部分-->
+  <view class='header flex-column space-between padding-between '>
+    <!--卡名称-->
+    <text class='golden margin-top-30 font-bold'>{{cardInfo.ticketName}}</text>
+    <!--卡号-->
+    <view class='flex-row margin-top-30'>
+      <view class='label-title width-100'>
+        <text class='white'>卡 号 : </text>
+      </view>
+      <view>
+        <text class='white padding-between'>{{cardInfo.cardNo}}</text>
+      </view>
+    </view>
+    <!--有效期至-->
+    <view class='flex-row margin-top-30'>
+      <view class='label-title width-100'>
+        <text class='white'>有效期至 : </text>
+      </view>
+      <view>
+        <text class='white padding-between'> {{filter.standradDate(cardInfo.ticketValidEndTime)}}</text>
+      </view>
+    </view>
+    <!--续卡单价-->
+    <view class='flex-row margin-top-30 margin-btm'>
+      <view class='label-title width-100'>
+        <text class='white'>续卡单价 : </text>
+      </view>
+      <view>
+        <text class='white padding-between'>{{cardInfo.price}}元/年</text>
+      </view>
+    </view>
+  </view>
+  <!--下半部分-->
+  <view class='flex-column margin-top'>
+    <!--续卡数量-->
+    <view class='flex-row height110'>
+      <view class='flex-row renewal-cal'>
+        <text class='lable-padding-20'>续卡数量 : </text>
+        <button class='backgroud-white  btn-cal' bindtap='deleteCount'>-</button>
+        <view class=' width-100 border-1 text-align-center'>
+          <text class=''>{{cardCount}}</text>
+        </view>
+        <button class='backgroud-white  btn-cal' bindtap='addCount'>+</button>
+        <text class='margin-left-50'>年</text>
+      </view>
+    </view>
+    <!--支付方式-->
+    <view class='flex-row height110'>
+      <view class='lable-padding-20'>
+        <text>支付方式： </text>
+      </view>
+    </view>
+    <!--会员卡支付微信支付-->
+    <view>
+      <radio-group class="radioGroup-padding-right">
+        <view class='flex-row btm-wired height80 centerItems' hidden>
+          <view>
+            <image src='../../assets/images/cash.png' class='image-width-height'></image>
+          </view>
+          <view>
+            <text>会员卡支付  </text>
+            <text class='orange'>( 余额 ：{{vipBalance}}元 )</text>
+          </view>
+          <view>
+            <radio color='#25667d' class='margin-left-100'></radio>
+          </view>
+        </view>
+        <view class='flex-row btm-wired height110 centerItems space-between padding-between'>
+          <view>
+            <image src='../../assets/images/icon_wechat.png' class='icon'></image>
+            <text class='padding-between'>微信支付</text>
+          </view>
+          <radio color='#25667d' class='margin-left-100' checked></radio>
+        </view>
+      </radio-group>
+    </view>
+    <view class='margin-top-20 margin-left-50 margin-right-50 '>
+      <view class='margin-20'>
+        <text class='orange'>续卡有效期至 ：{{filter.endDate(cardInfo.ticketValidEndTime,cardCount)}}</text>
+      </view>
+      <view class='margin-20'>
+        <text class='orange'>合计 ：￥{{cardInfo.price}}元/年 x {{cardCount}}年 = {{cardInfo.price*cardCount}}元</text>
+      </view>
+      <button bindtap='submit' class='btn btn-green white font32'>立即充值</button>
+    </view>
+  </view>
+</view>

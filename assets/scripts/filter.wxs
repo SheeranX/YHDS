@@ -1,0 +1,97 @@
+var DateFr = {
+
+  getDate: function (time, splitStr) {
+
+    if (!time) return '';
+
+    var date = getDate(time);
+    var M = date.getMonth() + 1;
+    var y = date.getFullYear();
+    var d = date.getDate();
+
+    if (M < 10) M = "0" + M;
+    if (d < 10) d = "0" + d;
+
+    if (splitStr)
+      return y + splitStr + M + splitStr + d;
+    else
+      return {
+        y: y,
+        M: M,
+        d: d
+      };
+  },
+  formatDate:function(d)
+  {
+    if(!d) return ""
+
+    return d.split(" ")[0];
+  },
+  standradDate:function(e){
+    if(!e) return ""
+
+    var date = e.split(" ")[0];
+
+    var year = date.split("-")[0];
+    var month = date.split("-")[1];
+    var day = date.split("-")[2];
+
+    return year + "年" + month + "月" + day + "日"
+
+  },
+
+  endDate:function(e,n){
+    if (!e) return ""
+
+    var date = e.split(" ")[0];
+
+    var year = date.split("-")[0];
+    var month = date.split("-")[1];
+    var day = date.split("-")[2];
+
+    return (parseInt(year)+n)+"年"+month+"月"+day+"日"
+  }
+}
+
+var cardNo = function(id){
+  var str = id;
+  var length = str.length;
+  var begin = str.substring(0,3);
+  var end = str.substring(length-4,length);
+  return begin+"****"+end
+}
+
+
+var formatOrderStatus = function(status)
+{
+  var str = "";
+  switch(status)
+  {
+    case "CANCEL_BY_USER":
+      str = "已取消"
+      break;
+    case "NORMAL":
+      str = "正常"
+      break
+    case "INVALID":
+      str = "已作废"
+      break
+  }
+
+  return str
+}
+
+var formatMoney =function(m){
+  return parseFloat(m).toFixed(2)
+}
+
+
+module.exports = {
+  getDate: DateFr.getDate,
+  format: DateFr.formatDate,
+  standradDate: DateFr.standradDate,
+  endDate: DateFr.endDate,
+  cardNo: cardNo,
+  formatOrderStatus: formatOrderStatus,
+  formatMoney: formatMoney
+}

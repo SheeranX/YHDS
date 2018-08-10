@@ -1,0 +1,34 @@
+<!--Components/purchasedInfo/purchasedInfo.wxml-->
+
+<view class='purchased-info flex-column'>
+  <!-- dxy添加 -->
+  <view class='purchased-gived margin-left-380' hidden='{{orderInfo.showGiveFlag=="1"}}'>
+    <image class='purchased-gived-img' src='../../assets/images/gived-img.png'></image>
+  </view>
+  <!-- dxy添加结束 -->
+  <view class='card-title flex-row btm-wired'>
+    <text>订单号：{{orderInfo.cardOrderNo}}</text>
+    <text>{{orderInfo.payStatus}}</text>
+  </view>
+  <view class='card-content flex-column btm-wired'>
+    <view class='flex-row bolder justify-content'>
+      <text>{{orderInfo.ticketTypeName}}</text>
+      <text>￥{{orderInfo.totalOrderAmount}}</text>
+    </view>
+    <view class='flex-row space-between'>
+      <text>卡号：{{orderInfo.cardNo}}</text>
+      <text>{{orderInfo.orderCardType=="0"?"办卡":"续卡"}}</text>
+    </view>
+    <view class='flex-row space-between'>
+      <text>卡有效人数：{{orderInfo.peopleNums}}</text>
+      <text wx:if="{{orderInfo.receiverNickName==''?false:true}}">受赠人：{{orderInfo.receiverNickName}}</text>
+    </view>
+  </view>
+  <view class='card-footer flex-row'>
+    <!-- 查看明细按钮 -->
+    <text class='btn btn-operate font24' catchtap='_detail' data-cardno='{{orderInfo.cardNo}}' data-cardorderno='{{orderInfo.cardOrderNo}}' hidden='{{orderInfo.showDetailFlag=="1"}}'>{{operateBtn.detail}}</text>
+    <text class='btn btn-operate font24' catchtap='_withdraw' data-cardorderno='{{orderInfo.cardOrderNo}}' data-status='{{orderInfo.payStatus}}' hidden='{{orderInfo.payStatus=="未支付"&&orderInfo.orderStatus!="CANCEL_BY_USER"?false:true}}'>去支付</text>
+    <!-- 赠送按钮 -->
+    <text hidden='{{!(orderInfo.orderCardType=="0"&&orderInfo.giveFlag=="0"&&orderInfo.payStatus=="已支付")}}' class='btn btn-operate font24' catchtap='_present' data-cardno='{{orderInfo.cardNo}}'>{{operateBtn.send}}</text>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<view class='container'>
+  <view class='header flex-column div-center'>
+    <view class='header-card flex-column div-center header-card-mini'>
+      <RegisterCard cardInfo="{{cardInfo}}"></RegisterCard>
+    </view>
+  </view>
+  <form bindsubmit='bindSubmit'>
+    <view class='padding-between margin-top'>
+      <!--卡号开始-->
+      <view class='flex-row btm-wired height80  div-center font28'>
+        <view class='label-title lable-padding'>
+          <text>卡号：</text>
+        </view>
+        <view class='flex-column div-center'>
+          <input type='text' maxlength='18' placeholder='请输入会员卡卡号' placeholder-class='font28' name="cardNo" value='{{cardno}}'></input>
+        </view>
+      </view>
+      <!--卡号结束-->
+      <!--密码开始-->
+      <view class='flex-row btm-wired height80 div-center font28'>
+        <view class='label-title lable-padding'>
+          <text>密码：</text>
+        </view>
+        <view class='flex-column div-center'>
+          <input type='text' maxlength='18' placeholder='请输入会员卡密码' placeholder-class='font28' name="cardPW" value='{{pwd}}' password="true"></input>
+        </view>
+      </view>
+      <!--密码结束-->
+    </view>
+    <view class='padding-between margin-top-480'>
+      <button form-type='submit' class='btn btn-green white font32'>下一步</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/bindCard/enterCardNo/enterCardNo.wxml-->
+<view class='container'>
+  <view class='header flex-column div-center'>
+    <view class='header-card flex-column div-center header-card-mini'>
+      <RegisterCard cardInfo="{{cardInfo}}"></RegisterCard>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='padding-between margin-top'>
+      <view class='flex-row btm-wired height80'>       
+          <text class='label-title'>证件号：</text>       
+        <view class='font28'>
+          <input maxlength='30' placeholder='请输入会员证件号' placeholder-class='font28' name="certificateNo"></input>
+        </view>
+      </view>
+    </view>
+    <view class='padding-between margin-top-80'>
+      <button class='btn btn-green white font32' form-type='submit'>下一步</button>
+    </view>
+  </form>
+</view>

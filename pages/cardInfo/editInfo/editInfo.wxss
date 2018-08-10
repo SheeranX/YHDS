@@ -1,0 +1,23 @@
+/* pages/cardInfo/editInfo/editInfo.wxss */
+/* .input-mobile{
+  border: 1px solid #ccc;
+} */
+.profile-img{
+  width: 130rpx;
+  height: 130rpx;
+  padding-right: 40rpx;
+}
+.h{
+  height: 100rpx;
+}
+.padding{
+  padding:0 40rpx;
+}
+.margin-left
+{
+  margin-left: 30rpx;
+}
+.input-mobile{
+  width:210rpx;
+
+}

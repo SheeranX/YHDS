@@ -1,0 +1,12 @@
+<!--pages/getAuth/getAuth.wxml-->
+<view class='container padding-between flex-column div-vertical'>
+<view  class='band txt-align-center'>
+ <image src='../../assets/images/band.png' class='band-img'></image>
+</view>
+<view class='txt-align-center tip margin-top'>
+ <text>授权月湖雕塑公园小程序使用您的头像和昵称</text>
+</view>
+  <view class='auth padding-between'>
+    <button open-type='getUserInfo' bindgetuserinfo='getAuth' class='btn btn-green white'>立即授权</button>
+  </view>
+</view>

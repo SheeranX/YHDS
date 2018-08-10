@@ -1,0 +1,25 @@
+<!--pages/activate/activate.wxml-->
+<view class='container'>
+  <!--上半部分开始-->
+  <view class='header flex-column div-center'>
+    <view class='header-card flex-column div-center header-card-mini'>
+      <RegisterCard cardInfo="{{cardInfo}}"></RegisterCard>
+    </view>
+  </view>
+  <!--上半部分结束-->
+  <!--下半部分开始-->
+  <view class='flex-column padding-between margin-top margin-left margin-right'>
+    <view wx:for="{{customers}}">
+      <!-- 添加的用户显示列表 -->
+       <view wx:if="{{item.photoPath!=''}}">
+        <customercard id="customercard" obj="{{item}}"></customercard>
+      </view> 
+      <view wx:else>
+        <customercard id="customercard" obj="{{item}}" bind:addEvent="_addPhotoEvent"></customercard>
+      </view>
+    </view>
+    <view class='padding-between bottom-btn margin-top-80'>
+      <button class='btn btn-green white font28' bindtap='submit'>提交</button>
+    </view>
+  </view>
+</view>

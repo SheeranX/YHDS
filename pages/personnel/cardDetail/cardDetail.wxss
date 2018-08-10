@@ -1,0 +1,14 @@
+/* pages/personnel/cardDetail/cardDetail.wxss */
+.check-detail view{
+  padding: 10rpx;
+}
+.long-label{
+  width: 200rpx;
+  text-align: right;
+  display: inline-block;
+}
+.copy-text{
+  height: 40rpx;
+  display: inline-block;
+  
+}

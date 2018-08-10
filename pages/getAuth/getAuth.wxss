@@ -1,0 +1,19 @@
+/* pages/getAuth/getAuth.wxss */
+.auth{
+  position: absolute;
+  bottom: 100rpx;
+  width: 80%;
+}
+.band{
+ padding-top: 200rpx;
+
+}
+.band-img{
+  width: 250rpx;
+  height: 200rpx;
+}
+.tip{
+  height: 200rpx;
+  line-height: 200rpx;
+  border: 1rpx dashed #ccc;
+}

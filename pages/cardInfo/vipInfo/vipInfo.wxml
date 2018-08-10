@@ -1,0 +1,18 @@
+<view class='container'>
+  <view class='border-bottom-1px height-350'>
+    <!--卡名称-->
+    <view class='lable-title'>
+      <text>{{cardName}}</text>
+    </view>
+    <!--卡号-->
+    <view class='lable-title'>
+      <text>卡号 ：</text>
+      <text class='font-weight-bold'>{{cardNo}}</text>
+    </view>
+    <!--有效期-->
+    <view class='lable-title'>
+      <text>有效期 :  </text>
+      <text>{{startDate}} 至 {{endDate}}</text>
+    </view>
+  </view>
+</view>

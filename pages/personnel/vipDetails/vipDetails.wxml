@@ -1,0 +1,22 @@
+<!--pages/personnel/cardDetail/cardDetail.wxml-->
+<wxs module="filter" src="../../../assets/scripts/filter.wxs"></wxs>
+<view class='container flex-column padding-between check-detail'>
+ <view>
+  <text class='font32 bolder'>{{cardDetail.ticketTypeName}}{{cardDetail.cardKind}}</text>
+ </view>
+  <view class='flex-row'>
+    <text class='long-label width-180'>卡号：</text>
+    <text>{{cardDetail.cardNo}}</text>
+  </view>
+    <view class='flex-row'>
+    <text class='long-label width-180'>密码：</text>
+    <text>{{cardDetail.cardPW}}</text>
+  </view>
+  <view class='flex-row flex-start'>
+    <text class='long-label padding-top width-180'>有效期：</text>
+    <view class='flex-column'>
+         <text wx:for="{{cardDetail.validDateList}}" wx:for-item="item" wx:key="unique">{{filter.standradDate(item.ticketValidStartTime)}}-{{filter.standradDate(item.ticketValidEndTime)}}</text>
+    </view>
+  </view>
+</view>
+   <customerCard obj="{{item}}" wx:for="{{detailList}}" wx:for-item="item" wx:key="unique" bind:delEvent="_delEvent" isHide="true" bind:editEvent="_edit" isHideEdit="{{isEdit}}"></customerCard>

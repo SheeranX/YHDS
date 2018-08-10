@@ -1,0 +1,30 @@
+/* Components/RegisterCard/RegisterCard.wxss */
+
+@import '../../app.wxss';
+.register{
+   width: 510rpx;
+  height: 310rpx;
+  overflow: hidden;
+  transform: translateY(-8rpx);
+}
+.register-img{
+  width:520rpx;
+  height:350rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.7);
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.register-content{
+  justify-content: space-between;
+}
+
+.register-txt{
+  position: absolute;
+  justify-content: space-between;
+  width: 400rpx;
+  height: 270rpx;
+  padding: 20rpx 0 20rpx 0;
+}
+

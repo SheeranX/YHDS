@@ -1,0 +1,22 @@
+/* pages/registerCard/registerCard.wxss */
+.header{
+  justify-content: center;
+}
+.card-list{
+  padding: 80rpx 60rpx 50rpx 60rpx;
+}
+.card-item{
+  justify-content: space-between;
+}
+.card-item-left{
+  width: 50%;
+  line-height: 90rpx;
+}
+.card-item-right{
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkbox{
+  padding: 30rpx 0;
+}

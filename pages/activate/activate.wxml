@@ -1,0 +1,101 @@
+<!--pages/activate/activate.wxml-->
+<view class='container'>
+  <!--上半部分开始-->
+  <view class='header flex-column div-center'>
+    <view class='header-card txt-align-center flex-column div-center'>
+      <card cardObj="{{cardInfo}}"></card>
+    </view>
+  </view>
+  <!--上半部分结束-->
+  <!--下半部分开始-->
+  <view class='flex-column padding-between margin-top margin-left margin-right'>
+    <view wx:for="{{customers}}">
+      <!-- 添加的用户显示列表 -->
+      <customercard id="customercard" obj="{{item}}" bind:delEvent="_deleteEvent"></customercard>
+    </view>
+    <form bindsubmit='submit' class='flex-column padding-50'>
+      <!--姓名-->
+      <view class='flex-row height100 form-block btm-wired'>
+        <view class='flex-row form-block align-center'>
+          <text class='label-title'> 姓   名：</text>
+          <input type='text' placeholder='请输入会员名' placeholder-class='font28' name='userName' bindinput='getUserName' value='{{userName}}'></input>
+        </view>
+        <text class='right-arrow invisible'>></text>
+      </view>
+      <!--姓名结束-->
+      <!--证件类型-->
+      <view class='flex-row height100 form-block btm-wired align-center'>
+        <view class='flex-row form-block align-center full-width'>
+          <text class='label-title'>证件类型：</text>
+          <!--证件类型选择器-->
+          <picker range='{{cardTypes}}' bindchange='bindPickerChange'>
+            <input type='text' placeholder='请选择证件类型' placeholder-class='font28' value='{{cardType}}' disabled='true' class='font24'></input>
+          </picker>
+        </view>
+        <text class='right-arrow'>></text>
+      </view>
+      <!--证件类型结束-->
+      <!--证件号-->
+      <view class='flex-row height100 form-block btm-wired align-center'>
+        <view class='flex-row form-block align-center'>
+          <text class='label-title'>证件号：</text>
+          <input maxlength='30' bindinput='getCardNo' placeholder='请输入证件号' placeholder-class='font28' name='cardNo' value='{{cardNo}}'></input>
+        </view>
+        <text class='right-arrow invisible'>></text>
+      </view>
+      <!--证件号结束-->
+      <!--手机号-->
+      <view class='flex-row height100 form-block btm-wired align-center'>
+        <view class='flex-row form-block align-center'>
+          <text class='label-title'>手机号：</text>
+          <input type='number' bindinput='getPhoneNum' placeholder='请输入手机号' placeholder-class='font28' maxlength='11' name='phoneNum' value='{{phoneNum}}'></input>
+        </view>
+        <text class='right-arrow invisible'>></text>
+      </view>
+      <!--手机号结束-->
+      <!--添加照片-->
+      <view class='flex-row height100 form-block btm-wired align-center'>
+        <view class='flex-row form-block align-center'>
+          <text class='label-title label-white-space'>添加照片：</text>
+          <input type='text' placeholder='请选择照片' placeholder-class='font28' bindtap='addPhoto' disabled='true'></input>
+          <image class='width-50-height-50' src="{{path}}"></image>
+        </view>
+        <text class='right-arrow'>></text>
+      </view>
+      <view class='flex-row height100 form-block '>
+        <text class='text-red'>注：该照片将用于人脸识别，请上传竖向清晰人脸照片</text>
+      </view>
+      <!--添加照片结束-->
+      <!--绑定账户-->
+      <view class='flex-row height80 align-center customer-name'>
+        <view wx:if="{{bindFlag}}" bindtap='unChoose'>
+          <image src='../../assets/images/choose.png' class='icon'></image>
+          <text class='font24 padding-20'>绑定当前微信账号</text>
+        </view>
+        <view wx:else="{{bindFlag}}" bindtap='choose'>
+          <image src='../../assets/images/unchoose.png' class='icon'></image>
+          <text class='font24 padding-20'>绑定当前微信账号</text>
+        </view>
+        <view bindtap='addPeople' wx:if="{{addFlag}}">
+          <image src='../../assets/images/add.png' class='icon view-margin-13'></image>
+          <text class='font24 padding-20'>添加家庭成员({{isAddPeopleNum}}/{{addPeopleCount}})</text>
+        </view>
+      </view>
+      <!--绑定账户结束-->
+      <!--推荐人-->
+      <view class='flex-row height100 form-block btm-wired' hidden='true'>
+        <view class='flex-row form-block  align-center'>
+          <text class='label-title font24 label-white-space'>推荐人会员ID：</text>
+          <input type='text' placeholder='选填' placeholder-class='font28' name='vipId'></input>
+        </view>
+      </view>
+      <!--推荐人结束-->
+      <!--立即激活按钮-->
+      <view class='padding-between margin-btm'>
+        <button form-type='submit' class='btn btn-green white font32'>立即激活</button>
+      </view>
+      <!--立即激活按钮结束-->
+    </form>
+  </view>
+</view>
+<canvas canvas-id='attendCanvasId' class='tran'></canvas>

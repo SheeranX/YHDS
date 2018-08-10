@@ -1,0 +1,102 @@
+<!--pages/personnel/personnel.wxml-->
+<wxs module="filter" src="../../assets/scripts/filter.wxs"></wxs>
+<view class='container'>
+  <!-- 顶部banner -->
+  <!-- 顶部banner -->
+  <view class='header flex-column div-center'>
+    <view class='header-card txt-align-center flex-column div-center'>
+      <view class='header-card-img'>
+        <image src='../../assets/images/card_l.png'></image>
+      </view>
+    </view>
+    <view class="card-content flex-column div-center invisible {{!(cardInfo.cardNo===''||isUnbind)?'visible':''}}">
+      <view class='flex-row card-title'>
+        <text class='white bolder'>{{cardInfo.ticketTypeName}} {{cardInfo.cardKind}}</text>
+        <button class='btn golden font24 btn-details' bindtap='goDetail'>使用明细</button>
+      </view>
+      <view class='flex-row card-no full-width padding-between white'>
+        <text>卡号:{{cardInfo.cardNo}}</text>
+        <text class='font20 padding-between'>{{filter.standradDate(filter.format(cardInfo.ticketValidEndTime))+" 到期"}}</text>
+      </view>
+      <view class='full-width padding-between'>
+        <navigator url='vipDetails/vipDetails?id={{cardInfo.cardNo}}' hover-class='none'>
+          <text class='golden padding-between font24'>会员卡详情></text>
+        </navigator>
+      </view>
+      <view class='flex-row card-footer full-width golden'>
+        <view class='flex-column'>
+          <text class='font20'>余额（元）</text>
+          <text class='bolder font36'>{{cardInfo.totalOrderAmount}}</text>
+        </view>
+        <view class='flex-column'>
+          <text class='font20'>剩余积分</text>
+          <text class='font36 bolder'>0</text>
+        </view>
+        <view class='flex-column'>
+          <text class='font20'>推荐好友数量</text>
+          <text class='font36 bolder'>{{cardInfo.totalRecommenSum}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 导航icon -->
+  <view class='flex-row margin-top nav-bar'>
+    <view class='flex-column h nav-icon' bindtap='goRenew'>
+      <image src='../../assets/images/icon_xuka.png' class='nav-img'></image>
+      <text>会员卡续卡</text>
+    </view>
+    <navigator url='../rechargeVIP/rechargeVIP' hover-class='none' hidden>
+      <view class='flex-column h nav-icon'>
+        <image src='../../assets/images/icon_recharge.png' class='nav-img'></image>
+        <text>会员卡充值</text>
+      </view>
+    </navigator>
+    <navigator url='purchasedCard/purchasedCard' hover-class='none'>
+      <view class='flex-column h nav-icon'>
+        <image src='../../assets/images/icon_huiyuan.png' class='nav-img'></image>
+        <text>我购买的会员卡</text>
+      </view>
+    </navigator>
+  </view>
+  <view class='operate-list padding-between'>
+   <view class='flex-row operate-item padding-between btm-wired'>
+      <button class='recommand-btn' hover-class='none' bindtap='purchasedAndGive'>购买并赠送会籍给好友</button>
+      <text>></text>
+    </view>
+    <view class='flex-row operate-item padding-between btm-wired'>
+      <button class='recommand-btn' hover-class='none' bindtap='recommand'>有奖推荐</button>
+      <text>></text>
+    </view>
+    <view class='flex-row operate-item padding-between btm-wired' hidden>
+      <text>帮助中心</text>
+      <text>></text>
+    </view>
+    <navigator url='../bindVip/bindVip' hover-class='none'>
+      <view class='flex-row operate-item padding-between btm-wired'>
+        <text>老用户照片录入</text>
+        <text>></text>
+      </view>
+    </navigator>
+      <view class='flex-row operate-item padding-between btm-wired' bindtap='bindUser'>
+        <text>绑定会员卡 <text class='golden font24'>（已办理或激活会员卡，请在这里绑定）</text></text>
+        <text>></text>
+      </view>
+  </view>
+  <view class="margin-top-30 padding-between invisible {{!(cardInfo.cardNo===''||isUnbind)?'visible':''}}">
+    <button class='btn font28 btn-scancode margin-bottom-20' bindtap='showModal'>
+      <image src='../../assets/images/erweima.png'></image> 会员二维码</button>
+  </view>
+  <view class="golden txt-align-center invisible {{!(cardInfo.cardNo===''||isUnbind)?'visible':''}}">
+    <text>当前会员ID：{{cardInfo.customerCodeId}} </text>
+    <text class='unbind' bindtap='unbind'> 解除绑定</text>
+  </view>
+  <view class='modal' wx-if="{{!isModal}}" bindtap='showModal' catchtouchmove="preventD"></view>
+  <view class='modal-content flex-column {{!isModal?"show-modal":""}}'>
+    <image src='../../assets/images/close.png' class='icon' bindtap='showModal'></image>
+    <view class='modal-qrcode flex-column'>
+      <!-- <image src='../../assets/images/huiyuan.png' class='qrcode-img'></image> -->
+      <canvas class='qrcode-img' canvas-id='myQrcode' wx-if="{{!isModal}}"></canvas>
+      <text class='margin-top'>消费时请出示此二维码</text>
+    </view>
+  </view>
+</view>

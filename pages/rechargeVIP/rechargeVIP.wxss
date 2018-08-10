@@ -1,0 +1,70 @@
+.margin-left-60 {
+  margin-left: 60rpx;
+}
+
+.margin-top-30 {
+  margin-top: 30rpx;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.width-100{
+  width: 150rpx;
+}
+
+.header {
+  height: 325rpx;
+  width: 100%;
+  background: linear-gradient(#25667d, #2a84a1);
+}
+
+.height110 {
+  height: 110rpx;
+}
+
+.lable-padding-20 {
+  padding: 20rpx;
+  padding-left: 10rpx;
+}
+
+.image-width-height {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.centerItems {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orange {
+  color: orangered;
+}
+
+.margin-left-280 {
+  margin-left: 275rpx;
+}
+
+.margin-left-100 {
+  margin-left: 96rpx;
+}
+
+.margin-top-200 {
+  margin-top: 180rpx;
+}
+
+.margin-left-50 {
+  margin-left: 50rpx;
+}
+
+.margin-right-50 {
+  margin-right: 50rpx;
+}
+
+.margin-20 {
+  margin: 20rpx;
+}
+

@@ -1,0 +1,86 @@
+<view class='container'>
+  <!--上半部分-->
+  <view class='header flex-column'>
+    <view class='margin-left-60'>
+      <!--卡名称-->
+      <text class='golden margin-top-30 font-bold'>{{title}}</text>
+      <!--卡号-->
+      <view class='flex-row margin-top-30'>
+        <view class='width-100'>
+          <text class='white'>卡号 : </text>
+        </view>
+        <view>
+          <text class='white'>{{cardNo}}</text>
+        </view>
+      </view>
+      <!--有效期至-->
+      <view class='flex-row margin-top-30'>
+        <view class='width-100'>
+          <text class='white'>有效期至 : </text>
+        </view>
+        <view>
+          <text class='white'>{{effectiveDate}}</text>
+        </view>
+      </view>
+      <!--卡内余额-->
+      <view class='flex-row margin-top-30'>
+        <view class='width-100'>
+          <text class='white'>卡内余额 : </text>
+        </view>
+        <view>
+          <text class='white'>{{balance}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--下半部分-->
+  <view class='flex-column padding-between form-row'>
+    <!--充值金额-->
+    <view class='flex-row btm-wired height80 padding-between'>
+      <view class='label-title'>
+        <text>充值金额：  ￥</text>
+      </view>
+      <view class='font24'>
+        <input class='plachoder-title' type='text' placeholder='请输入充值金额'           placeholder-class="font28" name="userName"></input>
+      </view>
+    </view>
+    <!--支付方式-->
+    <view class='flex-row height110'>
+      <view class='lable-padding-20'>
+        <text>支付方式： </text>
+      </view>
+    </view>
+    <!--会员卡支付微信支付-->
+      <radio-group>
+          <view class='flex-row btm-wired height110 centerItems margin-left'>
+            <view>
+              <image src='../../assets/images/cash.png' class='image-width-height'></image>
+            </view>
+            <view class='margin-left'>
+              <text>会员卡支付  </text>
+              <text class='orange'>( 余额 ：{{vipBalance}}元 )</text>
+            </view>
+            <view >
+              <radio class='margin-left-100' color='#25667d'></radio>
+            </view>
+          </view>
+          <view class='flex-row btm-wired height110 centerItems margin-left'>
+            <view>
+              <image src='../../assets/images/icon_wechat.png' class='image-width-height'></image>
+            </view>
+            <view class='margin-left'>
+              <text>微信支付  </text>
+            </view>
+            <view class='margin-left-280'>
+              <radio class='margin-left-100' color='#25667d'></radio>
+            </view>
+          </view>
+      </radio-group>
+    <view class='margin-top-200 margin-left-50 margin-right-50 '>
+      <view class='margin-20'>
+        <text class='orange'>充值后卡内余额 ：￥{{rechangeBalance}}</text>
+      </view>
+      <button form-type='submit' class='btn btn-green white font32'>立即充值</button>
+    </view>
+  </view>
+</view>

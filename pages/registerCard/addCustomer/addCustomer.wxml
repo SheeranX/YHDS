@@ -1,0 +1,37 @@
+<!--pages/registerCard/chooseCard/chooseCard.wxml-->
+<view class='container'>
+  <!-- 顶部banner+卡片 -->
+  <view class='header flex-column div-center'>
+    <view class='header-card flex-column div-center header-card-mini'>
+      <RegisterCard cardInfo="{{cardInfo}}"></RegisterCard>
+    </view>
+  </view>
+  <view wx:for="{{customers}}">
+    <!-- 添加的用户显示列表 -->
+    <customercard id="customercard" obj="{{item}}" bind:delEvent="_deleteEvent"></customercard>
+  </view>
+  <!-- <customercard obj="{{customer}}" bind:delEvent="_deleteEvent"></customercard> -->
+  <!-- 添加操作 -->
+  <view class='add-content padding-between margin-top '>
+    <form bindsubmit='bindSubmit'>
+      <view class='flex-row height100 form-block btm-wired font28' wx:if="{{flag}}">
+        <view class='flex-row form-block'>
+          <text class='long-label'>添加家庭成员：</text>
+          <input type='text' bindtap='navigatorAddPeople' placeholder='请添加{{peopleNums}}位家庭成员' placeholder-class='font28' disabled></input>
+        </view>
+        <text class='right-arrow'>></text>
+      </view>
+      <view class='flex-row height100 form-block btm-wired font28 invisible'>
+        <view class='flex-row form-block'>
+          <text class='long-label'>推荐人会员ID：</text>
+          <input type='text'  name='vipId' placeholder='选填' placeholder-class='font28' value='{{vipid}}'></input>
+        </view>
+        <text class='invisible right-arrow'>></text>
+      </view>
+      <view>
+        <button class='btn btn-green white font28' form-type='submit'>立即支付</button>
+        <text class='text-red'>如需发票，请到园区售票窗口开据</text>
+      </view>
+    </form>
+  </view>
+</view>

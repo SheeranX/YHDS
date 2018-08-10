@@ -1,0 +1,16 @@
+<!--pages/personnel/share/share.wxml-->
+<view class='well-paper'>
+  <image src='{{imgUrl}}' class='well-img'></image>
+  <view class='txt-info flex-column font32 bolder padding-topbtm'>
+    <text>好友 {{name}} 邀请您成为</text>
+    <text class='txt-align-right padding-right margin-top-40'>月湖雕塑公园的会员</text>
+  </view> 
+  <view class='remind-info'>
+    <text>尊敬的月湖雕塑公园会员您好！
+公园将定期举办优惠活动，推荐并购买成功一个（家庭会员）的，赠送月湖门票一张，推荐并购买成功满5个及以上会员的，免下一年会费一年，推荐并购买成功满10个及以上会员的，再送月湖国际会议中心房券一张，推荐并购买成功满20个及以上会员的，再送1000元餐饮消费券一张。更多优惠活动敬请期待！</text>
+  </view>
+  <view class='link-btn'>
+    <navigator url='../../index/index' hover-class='none' open-type='switchTab'><button class='btn btn-green white font28' hidden='{{flag}}'>了解会员</button></navigator>
+    <button class='btn btn-green white font28' open-type='share' hidden='{{!flag}}'>分享给好友</button>
+  </view>
+</view>

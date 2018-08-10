@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="container flex-column">
+  <!-- 顶部banner -->
+  <view class='swiper-cover'></view>
+  <view style='height:400rpx;'>
+    <swiper autoplay='true' interval='3000' duration='1000' style='height:100%;' circular="true">
+        <swiper-item bindtap="goNotice" wx:for="{{findAdvertiseList}}" wx:for-item="item" wx:key="index" wx:for-index="idx" data-url="{{item.advertiseUrl}}">
+          <view class='header flex-column div-center'>
+            <view class='header-card txt-align-center flex-column div-center'>
+              <view class='header-card-img'>
+                <image src='{{item.picPath}}'></image>
+              </view>
+            </view>
+            <view class='card-content flex-column div-center'>
+              <!-- <navigator url='../bindCard/enterCardNo/enterCardNo' hover-class="none" hidden>
+                  <button class='btn card-btn golden font32'>绑定会员卡</button>
+                </navigator> -->
+              <!-- <text class='white font32 full-width padding-between borderbox'>月湖雕塑公园</text>
+                <text class='txt-align-left full-width padding-between borderbox white font20'>推广期特惠：有效日期到2018.9.30</text> -->
+            </view>
+          </view>
+        </swiper-item>
+    </swiper>
+  </view>
+  <!-- 会员卡相关操作按钮 -->
+  <view class='flex-row padding-between btn-operate margin-top-80'>
+    <view>
+      <navigator url='../registerCard/registerCard' hover-class="none">
+        <button class='btn font28 btn-green white'>办理会员卡</button>
+      </navigator>
+    </view>
+    <view>
+      <navigator url='../activate/acivatebypwd/acivatebypwd' hover-class="none">
+        <button class='btn font28 btn-green white'>赠送会员卡激活</button>
+      </navigator>
+    </view>
+  </view>
+  <!-- 会员须知 -->
+  <view class='flex-column padding-between remind'>
+    <text class='bolder'>会员须知</text>
+    <view>
+      <text class='point'></text>
+      <text class='font24'> 欢迎您成为月湖雕塑公园的尊贵会员，公园会员分家庭会员和个人会员，进园和园内消费时请主动出示您的会员凭证。</text>
+    </view>
+    <view>
+      <text class='point'></text>
+      <text class='font24'>  此会员可储值/积分，在会员有效期内可以使用消费积分，请妥善保管您的会员号和密码。</text>
+    </view>
+    <view>
+      <text class='point'></text>
+      <text class='font24'> 此会员一经售出非公园方原因，不找零、不提现、不退换。</text>
+    </view>
+    <view>
+      <text class='point'></text>
+      <text class='font24'> 此为实名制会员，仅限登记人本人使用不可转借他人。</text>
+    </view>
+    <view>
+      <text class='point'></text>
+      <text class='font24'> 凡公园会员可凭会员凭证在9:00-17:00时间内、从园区正门人脸识别闸机无限次入园游玩，但不包括特殊节庆活动。</text>
+    </view>
+    <view>
+      <text class='point'></text>
+      <text class='font24'> 公园营业时间：9:00时-17:00时，营业时间以外不可入园。</text>
+    </view>
+    <view>
+      <text class='point'></text>
+      <text class='font24 red'> 本会员时效1年，有效期从开卡之日起算，在有效期内，且在园区营业时间内，可无限次进园游玩（演唱会、音乐会、啤酒节等特殊活动除外），家庭会员可带二名身高140cm以下儿童或二只宠物（宠物需持市级以上颁发的合法有效身份证件及免疫证明，每次进园均需出示）。个人会员不可附带小朋友和宠物进园。</text>
+    </view>
+    <view>
+      <text class='point'></text>
+      <text class='font24 red'> 园区会定期举办抽奖活动，请关注园区的微信公众号。</text>
+    </view>
+    <view>
+      <text class='point'></text>
+      <text class='font24 red'>  园内消费享9折优惠(宴会类消费除外)，且不与其他优惠同享。</text>
+    </view>
+    <view>
+      <text class='point'></text>
+      <text class='font24'> 更多会员权益敬请期待。</text>
+    </view>
+    <view>
+      <navigator url="notice/notice">
+        <text class='point'></text>
+        <text class='font24'> 如有疑问可致电:021-57798090转分机194（会员专线服务）。</text>
+      </navigator>
+    </view>
+  </view>
+</view>

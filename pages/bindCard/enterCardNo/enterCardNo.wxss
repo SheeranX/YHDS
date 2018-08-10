@@ -1,0 +1,4 @@
+/* pages/bindCard/enterCardNo/enterCardNo.wxss */
+.header{
+  justify-content: center;
+}

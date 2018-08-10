@@ -1,0 +1,23 @@
+<!--pages/personnel/giveFriends/giveFriends.wxml-->
+
+<view class='send-gift padding-between flex-column margin-top'>
+  <view  class='margin-left-350'>
+    <text>您的好友{{userInfo.nickName}}赠送您</text>
+   </view>
+  <text class='font32 bolder padding-topbtm'>{{orderInfo.ticketTypeName}}</text>
+  <image src='../../../assets/images/card-011.png' class='send-gift-image'></image>
+  <view class='card-info flex-column'>
+    <view class='font32 bolder align-center margin-top-40'>
+
+      <text>{{orderInfo.ticketTypeName}}</text>
+    </view>
+    <view class='flex-column margin-top-80'>
+      <text>有效人数：{{orderInfo.peopleNums}}人</text>
+      <text class='margin-top-20'>有效期：{{orderInfo.validityPeriod}}</text>
+    </view>
+  </view>
+  <view class='link-btn'>
+    <button class='btn btn-green white font28' hidden='{{!flag}}'>立即激活</button>
+    <button class='btn btn-green white font28' open-type='share' hidden='{{flag}}'>赠送会员卡</button>
+  </view>
+</view>

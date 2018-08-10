@@ -1,0 +1,42 @@
+<!--pages/registerCard/registerCard.wxml-->
+<view class='container'>
+  <view class='header flex-column div-center'>
+    <view class='header-card flex-column div-center header-card-mini'>
+      <RegisterCard cardInfo="{{cardInfo}}"></RegisterCard>
+    </view>
+  </view>
+  <view class='card-list flex-column'>
+    <radio-group bindchange='radioGroupChange'>
+      <view wx:for="{{cardInfos}}" class='card-item height100 flex-row btm-wired'>
+        <view class='card-item-left'>
+          <text>{{item.ticketName}}</text>
+        </view>
+        <view class='card-item-right flex-row'>
+          <text class='red'>￥{{item.price}}</text>
+          <view wx:if="{{item.ticketSaleFlag == 'Y'}}">
+            <radio value='{{index}}' checked="{{item.checked}}" class='icon' color='#25667d'></radio>
+          </view>
+          <view wx:else>
+            待售
+          </view>
+        </view>
+      </view>
+    </radio-group>
+    <view class='invisible'>
+      <view wx:if="{{peopleFlag}}" class='checkbox' bindtap='hideThis'>
+        <image src='../../assets/images/choose.png' class='icon check-box'></image>
+        <text> 是否录入个人信息</text>
+      </view>
+      <view wx:else="{{peopleFlag}}" class='checkbox' bindtap='showThis'>
+        <image src='../../assets/images/unchoose.png' class='icon check-box'></image>
+        <text> 是否录入个人信息</text>
+      </view>
+    </view>
+    <view class='padding-between bottom-btn'>
+      <button bindtap='InputInfo' class='btn btn-green white font28'>{{buttonText}}</button>
+      <view>
+        <text class='text-red'>如需发票，请到园区售票窗口开据</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+/* pages/registerCard/chooseCard/chooseCard.wxss */
+
+.header {
+  justify-content: center;
+}
+
+.form-block {
+  justify-content: center;
+  align-items: center;
+}
+
+.long-label {
+  width: 200rpx;
+  white-space: nowrap;
+}

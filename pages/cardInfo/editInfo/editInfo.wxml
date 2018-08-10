@@ -1,0 +1,21 @@
+<!--pages/cardInfo/editInfo/editInfo.wxml-->
+<view class='container padding-between margin-top'>
+ <form bindsubmit="formSubmit">
+   <view class='flex-row space-between btm-wired padding' bindtap='changeImg'>
+   <view>
+    <text>更换照片</text>
+   </view>
+   <view class='flex-row dev-center'>
+     <image src='{{path}}' class='profile-img'></image>
+     <text>></text>
+   </view>
+  </view>
+  <view class='flex-row btm-wired h padding-between space-between'>
+    <text>手机号</text>
+      <input type="number" placeholder='请输入手机号' class='font28 input-mobile margin-left' value='{{mobile}}' name="mobile"></input>
+  </view>
+  <view class='margin-top'>
+   <button class='btn btn-green white' bindtap='modify' formType="submit">确定</button>
+  </view>
+ </form>
+</view>
